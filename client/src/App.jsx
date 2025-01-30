@@ -1,22 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
 import DestinationList from './components/DestinationList';
 import ItineraryList from './components/ItineraryList';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+  const App = () => {
 
   return (
     <>
      <Router>
-        <Header />
-        <Switch>
+      <Header/>
+          <Routes>
             <Route path="/" exact component={Home} />
-            <Route path="/DestinationList" component={DestinationList} />
+            <Route  path="/DestinationList" component={DestinationList} />
             <Route path="/ItineraryList" component={ItineraryList} />
-        </Switch>
+          </Routes>
     </Router>  
     </>
   )
